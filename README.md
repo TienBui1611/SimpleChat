@@ -1,59 +1,169 @@
-# Chat
+# Live Chat Application 💬
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.5.
+A real-time chat application built with **Angular** frontend and **Node.js** backend using **Socket.io** for live messaging capabilities.
 
-## Development server
+*Workshop 6 - Node and Sockets (Worth 2.5%)*
 
-To start a local development server, run:
+## 🚀 Features
 
-```bash
-ng serve
-```
+- ✅ **Real-time messaging** with Socket.io
+- ✅ **Multi-user support** - multiple users can chat simultaneously  
+- ✅ **User identification** - username-based messaging
+- ✅ **Join notifications** - see when users join the chat
+- ✅ **Responsive design** - Bootstrap-styled interface
+- ✅ **Auto-scroll** - chat automatically scrolls to newest messages
+- ✅ **Message timestamps** - see when messages were sent
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🛠️ Technology Stack
 
-## Code scaffolding
+- **Frontend**: Angular 20+ with TypeScript
+- **Backend**: Node.js with Express
+- **Real-time Communication**: Socket.io
+- **Styling**: Bootstrap 5
+- **CORS**: Enabled for cross-origin requests
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 📋 Prerequisites
 
-```bash
-ng generate component component-name
-```
+- Node.js (v16 or higher)
+- Angular CLI (`npm install -g @angular/cli`)
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🚀 Getting Started
 
-```bash
-ng generate --help
-```
+### 1. Install Dependencies
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+**Frontend dependencies:**
 
 ```bash
-ng test
+npm install
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+**Backend dependencies:**
 
 ```bash
-ng e2e
+cd server
+npm install
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### 2. Start the Backend Server
 
-## Additional Resources
+```bash
+cd server
+node server.js
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+You should see:
+
+```
+Chat server starting...
+Socket.IO module loaded
+Server is running on http://localhost:3000
+Socket.IO server is ready for connections
+```
+
+### 3. Start the Frontend Development Server
+
+Open a new terminal in the project root:
+
+```bash
+ng serve --open
+```
+
+The application will automatically open at `http://localhost:4200/`
+
+## 🧪 Testing the Live Chat
+
+### Single User Test
+
+1. Open `http://localhost:4200`
+2. Enter a username and click "Join Chat"
+3. Send a message to verify basic functionality
+
+### Multi-User Real-Time Test
+
+1. **Open multiple browser windows/tabs** to `http://localhost:4200`
+2. **Use different usernames** in each window
+3. **Send messages** from different windows
+4. **Verify** messages appear instantly in all connected browsers
+
+### Expected Behavior
+
+- Messages appear in real-time across all connected clients
+- Join notifications when users connect
+- Your messages appear on the right (blue), others on the left (gray)
+- Auto-scroll to newest messages
+- Responsive design on mobile/desktop
+
+## 📁 Project Structure
+
+```
+week6-workshop/
+├── src/app/
+│   ├── chat/                 # Chat component
+│   │   ├── chat.ts          # Component logic
+│   │   ├── chat.html        # Template
+│   │   └── chat.css         # Styling
+│   ├── services/
+│   │   └── socket.ts        # Socket.io service
+│   └── app.routes.ts        # Routing configuration
+├── server/
+│   ├── server.js            # Main server file
+│   ├── sockets.js           # Socket handling logic
+│   ├── listen.js            # Server startup module
+│   └── package.json         # Server dependencies
+└── README.md
+```
+
+## 🔧 Development Commands
+
+### Frontend
+
+```bash
+ng serve              # Start development server
+ng build              # Build for production
+ng test               # Run unit tests
+ng generate component # Generate new component
+```
+
+### Backend
+
+```bash
+node server.js        # Start server
+nodemon server.js     # Start with auto-restart
+```
+
+## 🌐 Ports
+
+- **Frontend**: <http://localhost:4200>
+- **Backend**: <http://localhost:3000>
+- **Socket.io**: ws://localhost:3000
+
+## 🛡️ CORS Configuration
+
+The server is configured to accept connections from `http://localhost:4200` with GET and POST methods enabled.
+
+## 📝 Workshop Requirements Completed
+
+- ✅ **Task 1**: Project setup with Angular frontend and Node.js backend
+- ✅ **Task 2**: Chat component with form, message display, and routing
+- ✅ **Task 3**: Server-side socket implementation for message broadcasting
+
+## 🎯 Demo Instructions
+
+1. Start both servers (backend on :3000, frontend on :4200)
+2. Open multiple browser windows to test multi-user functionality
+3. Enter different usernames and send messages
+4. Observe real-time message broadcasting across all connected clients
+
+## 🤝 Contributing
+
+This is a workshop project for educational purposes. Feel free to enhance with additional features like:
+
+- Message persistence
+- User avatars
+- Private messaging
+- Emoji support
+- File sharing
+
+---
+
+*Built with ❤️ for Software Frameworks Workshop 6*
