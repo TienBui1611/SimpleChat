@@ -1,0 +1,56 @@
+.message-bubble {
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.my-message {
+  background-color: #007bff;
+  color: white;
+  margin-left: auto;
+  text-align: right;
+}
+
+.other-message {
+  background-color: #e9ecef;
+  color: #333;
+  margin-right: auto;
+  text-align: left;
+}
+
+.notification-message {
+  text-align: center;
+  font-style: italic;
+  color: #6c757d;
+  padding: 5px;
+}
+
+.chat-messages {
+  background-color: #f8f9fa !important;
+  border-radius: 5px;
+}
+
+.chat-messages ul {
+  margin: 0;
+  padding: 0;
+}
+
+.chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

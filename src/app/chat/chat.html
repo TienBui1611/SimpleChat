@@ -1,0 +1,56 @@
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="mb-0">Live Chat</h3>
+        </div>
+        <div class="card-body">
+          <!-- Chat Messages Display -->
+          <div class="chat-messages mb-3" style="height: 400px; overflow-y: auto; border: 1px solid #dee2e6; padding: 15px; background-color: #f8f9fa;">
+            <ul class="list-unstyled">
+              <li *ngFor="let message of messages" class="mb-2">
+                <div class="message-bubble" [ngClass]="{'my-message': message.isOwn, 'other-message': !message.isOwn}">
+                  <strong>{{ message.username }}:</strong> {{ message.text }}
+                  <small class="text-muted d-block">{{ message.timestamp | date:'short' }}</small>
+                </div>
+              </li>
+              <li *ngFor="let notification of notifications" class="mb-2">
+                <div class="notification-message">
+                  <em class="text-info">{{ notification }}</em>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Username Input (if not set) -->
+          <div *ngIf="!username" class="mb-3">
+            <label for="usernameInput" class="form-label">Enter your username:</label>
+            <div class="input-group">
+              <input 
+                type="text" 
+                id="usernameInput"
+                class="form-control" 
+                [(ngModel)]="tempUsername" 
+                placeholder="Your username..."
+                (keyup.enter)="setUsername()">
+              <button class="btn btn-primary" type="button" (click)="setUsername()">Join Chat</button>
+            </div>
+          </div>
+
+          <!-- Chat Form -->
+          <form *ngIf="username" (ngSubmit)="sendMessage()" class="d-flex">
+            <input 
+              type="text" 
+              class="form-control me-2" 
+              [(ngModel)]="currentMessage" 
+              name="message"
+              placeholder="Type your message..." 
+              required>
+            <button type="submit" class="btn btn-primary" [disabled]="!currentMessage?.trim()">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
