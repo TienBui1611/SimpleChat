@@ -2,7 +2,7 @@
 
 A real-time chat application built with **Angular** frontend and **Node.js** backend using **Socket.io** for live messaging capabilities.
 
-*Workshop 6 - Node and Sockets (Worth 2.5%)*
+*Workshop 6 - Node and Sockets*
 
 ## 🚀 Features
 
