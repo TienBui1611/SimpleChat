@@ -12,7 +12,7 @@
               <li *ngFor="let message of messages" class="mb-2">
                 <div class="message-bubble" [ngClass]="{'my-message': message.isOwn, 'other-message': !message.isOwn}">
                   <strong>{{ message.username }}:</strong> {{ message.text }}
-                  <!-- <small class="text-muted d-block">{{ message.timestamp | date:'short' }}</small> -->
+                  <small class="text-muted d-block">{{ message.timestamp | date:'short' }}</small>
                 </div>
               </li>
               <li *ngFor="let notification of notifications" class="mb-2">

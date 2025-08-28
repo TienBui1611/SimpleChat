@@ -7,7 +7,7 @@ import { Subscription } from 'rxjs';
 interface ChatMessage {
   username: string;
   text: string;
-  /* timestamp: Date; */
+  timestamp: Date;
   isOwn: boolean;
 }
 
@@ -35,7 +35,7 @@ export class ChatComponent implements OnInit, OnDestroy {
       const message: ChatMessage = {
         username: data.username || 'Anonymous',
         text: data.text || data.message || data,
-        /* timestamp: new Date(), */
+        timestamp: new Date(),
         isOwn: data.username === this.username
       };
       this.messages.push(message);
@@ -77,7 +77,7 @@ export class ChatComponent implements OnInit, OnDestroy {
       const messageData = {
         username: this.username,
         text: this.currentMessage.trim(),
-        /* timestamp: new Date() */
+        timestamp: new Date()
       };
       
       this.socketService.sendMessage(messageData);

@@ -7,15 +7,15 @@
 }
 
 .my-message {
-  /* background-color: #007bff; */
-  /* color: white; */
+  background-color: #007bff;
+  color: white;
   margin-left: auto;
   text-align: right;
 }
 
 .other-message {
-  /* background-color: #e9ecef; */
-  /* color: #333; */
+  background-color: #e9ecef;
+  color: #333;
   margin-right: auto;
   text-align: left;
 }
@@ -27,7 +27,6 @@
   padding: 5px;
 }
 
-/*
 .chat-messages {
   background-color: #f8f9fa !important;
   border-radius: 5px;
@@ -55,4 +54,3 @@
 .chat-messages::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-*/
